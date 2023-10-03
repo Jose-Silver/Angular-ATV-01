@@ -5,10 +5,10 @@ import { pessoas } from 'src/shared/models/pessoas';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './pessoa.component.html',
+  styleUrls: ['./pessoa.component.scss']
 })
-export class AppComponent {
+export class pessoaComponent {
   pessoas : pessoas[] = [ new pessoas(15, "luana"),
   new pessoas(20, "Melissa"),
   new pessoas(35, "Thomas turbando"),
