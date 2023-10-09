@@ -10,30 +10,52 @@
   </div>
 <div class="col">
 <button type="submit" class="btn btn-primary" (click)="$event.preventDefault(); addPessoa()"> Add pessoa</button>
-
 </div>
-
  </form>
 
 
 
-  <div *ngIf="pessoas.length == 0; else showPessoa ">
-    NENUMA PESSOA
-  </div>
 
-  <ng-template #showPessoa>
-    <ul >
-      <li *ngFor=" let pessoa of pessoas"> 
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="checkbox" (click)="targetPessoa()" [checked]=" pessoa.idade > 30">  {{pessoa.nome}}
-          </label>
-        </div>
-      </li>
-    </ul>
-  </ng-template>
+  <table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>idade</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let pessoa of pessoas">
+      <td>{{pessoa.nome}}</td>
+      <td>{{pessoa.idade}}</td>
+
+    </tr>
+  </tbody>
+
+
+<h1>IDADE ACIMA DOS 30</h1>
+
   
+  </table>
 
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>idade</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <tr *ngFor="let pessoa of pessoas">
+        <div *ngIf="pessoa.idade > 30">
 
+          <td>{{pessoa.nome}}</td>
+          <td>{{pessoa.idade}}</td>
+    
+        </div>
 
-</div>
+      </tr>
+    </tbody>
+    
+    </table>
