@@ -1,0 +1,27 @@
+<div class="container w-100">
+
+    <div class="row">
+
+        <div id="table" class="table">
+
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Autor</th>
+                </tr>
+            </thead>
+
+            <tbody> 
+                <tr *ngFor="let livro of livros">
+                    <td><a class="text-decoration-none link-dark" [routerLink]="[livro.titulo]">{{livro.titulo}}</a> </td>
+                    <td>{{livro.autor}}</td>
+                </tr>
+            </tbody>
+
+        </div>
+
+    </div>
+
+
+
+</div>

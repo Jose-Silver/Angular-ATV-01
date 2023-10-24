@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center">
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>idade</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+           <tr *ngFor="let pessoa of item" >
+            <td> <a [routerLink]="[pessoa.nome]" class=" link-dark text-decoration-none"> {{pessoa.nome}}</a></td>
+            <td >{{pessoa.idade}}</td>
+        
+          </tr>
+
+        </tbody>
+    </table>
+        
+
+</div>

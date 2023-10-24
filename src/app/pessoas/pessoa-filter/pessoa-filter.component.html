@@ -1,0 +1,9 @@
+<div class="col-3  row">
+    <select name="filtro" class="  form-select"  [(ngModel)]="listFilter"
+    (ngModelChange)="changeFilter($event)"
+    >
+      <option value="padrao" selected="true"> sem filtro</option>
+      <option value="acima-de-30"> Mais de 30 anos</option>
+
+    </select>
+  </div>

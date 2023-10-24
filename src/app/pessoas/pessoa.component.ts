@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { pessoas } from 'src/shared/models/pessoas';
+import { PessoasService } from './pessoas.service';
 
 
 @Component({
@@ -8,34 +9,38 @@ import { pessoas } from 'src/shared/models/pessoas';
   templateUrl: './pessoa.component.html',
   styleUrls: ['./pessoa.component.scss']
 })
-export class pessoaComponent {
-  pessoas : pessoas[] = [ new pessoas(15, "luana"),
-  new pessoas(20, "Melissa"),
-  new pessoas(35, "Thomas turbando"),
-  new pessoas(47, "Paula vadinho"),
-  new pessoas(50, "Simas turbo"),
-  new pessoas(28, "Geovanna"),
-  new pessoas(48, "Cuca Beludo"),
-  new pessoas(66, "claudete"),
-  new pessoas(88, "crista"),
-  new pessoas(69, "Paula tejano")]
+export class pessoaComponent  implements OnInit {
   title = 'aula de angular';
-
-
   pessoaNome:string = "";
   pessoaIdade :number = 0;
+  item: pessoas[] =[];
+  listFilter: string ="padrao"
+  filter: any;
+  pessoasList : pessoas [] = [];
 
-  targetPessoa() :void {
+  constructor(private pessoasService: PessoasService) { }
+  ngOnInit(): void {
+    this.pessoasService.getAllPessoas().subscribe(pessoas => {
+      this.pessoasList = pessoas    
+  })}
+
+
+ get pessoasVisiel(): any {
+  let filtro = this.filter
+  if (filtro === "padrao") {
+     return  this.pessoasList;
+    
+  } else if (filtro === "acima-de-30") {
+
+    return this.pessoasList.filter(pessoas => pessoas.idade > 30);
+
+  }
+ }
+ targetPessoa() :void {
 console.log( "pessoa clicked");
   }
 
-  addPessoa() {
-    this.pessoas.push(new pessoas(this.pessoaIdade, this.pessoaNome))
-    this.pessoaIdade = 0;
-    this.pessoaNome ="";
-    
-    console.log("pessoa adicionada");
-  }
+
 }
 
 

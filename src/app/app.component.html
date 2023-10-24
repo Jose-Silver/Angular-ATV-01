@@ -302,7 +302,7 @@
   }
 </style>
 
-<!-- Toolbar -->
+<!-- Toolbar
 <div class="toolbar" role="banner">
   <img
     width="40"
@@ -313,10 +313,17 @@
 
    <a routerLink="pessoas"> pessoas </a>
 
-</div>
+</div> -->
 
-<router-outlet routerLink="navi"></router-outlet>
 
+<header>
+  <app-navigate>
+  </app-navigate>    
+</header>
 <div class="content" role="main">
 
-<router-outlet> </router-outlet>
+<router-outlet>  </router-outlet>
+
+</div>
+
+

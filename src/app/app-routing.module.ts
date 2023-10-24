@@ -2,7 +2,22 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {pessoaComponent} from "./pessoas/pessoa.component"
 
-const routes: Routes = [{path: "", component: pessoaComponent}];
+import {NavigateComponent} from "./layout/navigate/navigate.component"
+import {IndexComponent} from "./layout/index/index.component"
+import {CarrosComponent} from "./carros/carros.component"
+import {LivrosComponent} from "./livros/livros.component"
+import PessoaDetailsComponent from './pessoas/pessoa-details/pessoa-details.component';
+import { CarroDetailComponent } from './carros/carro-detail/carro-detail.component';
+import { LivrosDetailsComponent } from './livros/livros-details/livros-details.component';
+
+const routes: Routes = [
+{path: "pessoas", component: pessoaComponent},
+{path: "", component: IndexComponent},{path: "navigate", component:NavigateComponent},
+{path: "carros", component: CarrosComponent},
+{path: "livros", component: LivrosComponent},
+{path: "pessoas/:nome", component: PessoaDetailsComponent},
+{path: "carros/:nome", component: CarroDetailComponent},
+{path: "livros/:titulo", component: LivrosDetailsComponent},];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -7,9 +7,16 @@ import { Component } from "@angular/core";
 //   styleUrls: ['./app.component.scss']
 // })
 
-export class pessoas {
+export class pessoas {  
 
-    constructor( public idade: number, public nome: String){}
+    foto:string = "https://static-00.iconduck.com/assets.00/profile-major-icon-512x512-xosjbbdq.png"
+
+    public setFoto(foto:string) { this.foto = foto; }
+    public getFoto():string { return this.foto; }
+
+    constructor( public idade: number, public nome: String, foto? : string  ){}
+    
+
 
     public setIdade (idade : number) :void {
         this.idade = idade;
@@ -18,6 +25,8 @@ export class pessoas {
     public setNome (nome: String) :void {
         this.nome =nome;
     }
+
+    
 
 }
 
