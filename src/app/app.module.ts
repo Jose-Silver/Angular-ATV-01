@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { pessoaComponent } from './pessoas/pessoa.component';
 import { NavigateComponent } from './layout/navigate/navigate.component';
 import { CarrosComponent } from './carros/carros.component';
@@ -18,6 +18,7 @@ import { CarrosListComponent } from './carros/carros-list/carros-list.component'
 import { CarroDetailComponent } from './carros/carro-detail/carro-detail.component';
 import { LivrosListComponent } from './livros/livros-list/livros-list.component';
 import { LivrosDetailsComponent } from './livros/livros-details/livros-details.component';
+import { PessoaEditComponent } from './pessoas/pessoa-edit/pessoa-edit.component';
 
 
 @NgModule({
@@ -38,11 +39,13 @@ import { LivrosDetailsComponent } from './livros/livros-details/livros-details.c
     CarroDetailComponent,
     LivrosListComponent,
     LivrosDetailsComponent,
+    PessoaEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { pessoas } from 'src/shared/models/pessoas';
 import { PessoasService } from './pessoas.service';
+import  EventService  from '../shared/event.service';
 
 
 @Component({
@@ -18,7 +19,14 @@ export class pessoaComponent  implements OnInit {
   filter: any;
   pessoasList : pessoas [] = [];
 
-  constructor(private pessoasService: PessoasService) { }
+  constructor(private pessoasService: PessoasService) {
+
+
+   EventService.listen("addPessoa", () => { alert("Pessoa adicionada!"); });
+
+
+
+   }
   ngOnInit(): void {
     this.pessoasService.getAllPessoas().subscribe(pessoas => {
       this.pessoasList = pessoas    
@@ -39,6 +47,8 @@ export class pessoaComponent  implements OnInit {
  targetPessoa() :void {
 console.log( "pessoa clicked");
   }
+
+
 
 
 }

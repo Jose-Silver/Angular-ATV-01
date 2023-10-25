@@ -9,6 +9,7 @@ import {LivrosComponent} from "./livros/livros.component"
 import PessoaDetailsComponent from './pessoas/pessoa-details/pessoa-details.component';
 import { CarroDetailComponent } from './carros/carro-detail/carro-detail.component';
 import { LivrosDetailsComponent } from './livros/livros-details/livros-details.component';
+import { PessoaEditComponent } from './pessoas/pessoa-edit/pessoa-edit.component';
 
 const routes: Routes = [
 {path: "pessoas", component: pessoaComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
 {path: "livros", component: LivrosComponent},
 {path: "pessoas/:nome", component: PessoaDetailsComponent},
 {path: "carros/:nome", component: CarroDetailComponent},
-{path: "livros/:titulo", component: LivrosDetailsComponent},];
+{path: "livros/:titulo", component: LivrosDetailsComponent},
+{path: "pessoas/:nome/editar", component: PessoaEditComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

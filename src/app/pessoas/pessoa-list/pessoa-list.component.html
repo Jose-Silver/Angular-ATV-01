@@ -9,14 +9,21 @@
         </thead>
         
         <tbody>
-           <tr *ngFor="let pessoa of item" >
+           <tr *ngFor="let pessoa of item" class="pessoa" >
             <td> <a [routerLink]="[pessoa.nome]" class=" link-dark text-decoration-none"> {{pessoa.nome}}</a></td>
             <td >{{pessoa.idade}}</td>
-        
+            <!-- <td ><button  class="  btn btn-primary editar" [routerLink]="[pessoa.nome]">Edit</button></td> -->
+              <app-pessoa-edit  [pessoaSelecionada] ="pessoa">
+              </app-pessoa-edit>
+            
+            
           </tr>
-
         </tbody>
     </table>
         
 
 </div>
+
+
+
+

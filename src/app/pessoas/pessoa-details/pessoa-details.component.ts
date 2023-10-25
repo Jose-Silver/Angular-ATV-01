@@ -20,6 +20,7 @@ export default class PessoaDetailsComponent implements OnInit{
 
     this.route.paramMap.subscribe((params: ParamMap) => {
 
+
       
       let nome = params.get('nome');
       if (nome){

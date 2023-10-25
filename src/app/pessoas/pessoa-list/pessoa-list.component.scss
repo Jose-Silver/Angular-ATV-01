@@ -1,0 +1,10 @@
+.editar {
+    display: none;
+} 
+
+.pessoa:hover{
+
+    .editar{
+        display: block !important;
+    }
+}
